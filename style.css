@@ -3,3 +3,7 @@
 .apexcharts-tooltip:not(:empty) {
     padding: 6px 9px;
 }
+
+* {
+    font-family: 'Poppins', sans-serif;
+}

@@ -206,6 +206,7 @@ function processData_Heatmap(today, firebaseData) {
                 // radius: 5,
             }
         },
+        fontFamily: 'Poppins, sans-serif',
         series: [
             {
                 name: "Sat",
@@ -236,6 +237,7 @@ function processData_Heatmap(today, firebaseData) {
                 data: dataSeries["Sun"]
             },
         ],
+
         stroke: {
             show: true,
             colors: ["#90A4AE"],
@@ -253,6 +255,20 @@ function processData_Heatmap(today, firebaseData) {
             },
             axisBorder: {
                 show: false
+            },
+            labels: {
+                style: {
+                    colors: "#90A4AE",
+                    fontFamily: 'Poppins, sans-serif',
+                },
+            },
+        },
+        yaxis: {
+            labels: {
+                style: {
+                    colors: "#90A4AE",
+                    fontFamily: 'Poppins, sans-serif',
+                },
             },
         },
         grid: {

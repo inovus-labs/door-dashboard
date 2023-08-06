@@ -6,7 +6,7 @@ var firebaseData = {}, last365Days = [];
     let response = await fetch("https://inovus-smart-door-default-rtdb.asia-southeast1.firebasedatabase.app/logs.json")
     firebaseData = await response.json();
 
-    console.log(firebaseData);
+    // console.log(firebaseData);
 })();
 
 
@@ -76,7 +76,7 @@ firebaseData = {
         "time": 1691144586
     }
 }
-console.log(firebaseData);
+// console.log(firebaseData);
 
 
 
@@ -210,7 +210,7 @@ for (var i = 0; i < x_categories.length; i++) {
     }
 }
 
-// console.log(x_categories);
+console.log(dataSeries);
 
 
 

@@ -15,6 +15,9 @@ function generateData(count, yrange) {
         });
         i++;
     }
+
+    console.log(series);
+    
     return series;
 }
 
@@ -35,21 +38,21 @@ var options = {
     series: [
         {
             name: "",
-            data: generateData(53, {
+            data: generateData(52, {
                 min: 0,
                 max: 90
             })
         },
         {
             name: "Fri",
-            data: generateData(53, {
+            data: generateData(52, {
                 min: 0,
                 max: 90
             })
         },
         {
             name: "",
-            data: generateData(53, {
+            data: generateData(52, {
                 min: 0,
                 max: 90
             })

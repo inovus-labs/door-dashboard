@@ -37,12 +37,12 @@
 
 .statement {
     margin: 0;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .statement span {
     color: #5a5a5a;
-    font-size: 14px;
-    font-weight: 500;
 }
 
 .sub-statement {
@@ -51,7 +51,7 @@
 }
 
 .sub-statement span {
-    font-size: 10px;
+    font-size: 11px;
     color: #858585;
     font-weight: 500;
 }

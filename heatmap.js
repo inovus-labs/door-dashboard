@@ -159,21 +159,21 @@ function processData_Heatmap(today, firebaseData) {
     // define categories for x-axis
     // length of categories should be equal to the length of dataSeries
     let x_categories = [];
-    for (var i = 0; i < dataSeries["Sun"].length; i++) {
+    for (let i = 0; i < dataSeries["Sun"].length; i++) {
         x_categories.push(dataSeries["Sun"][i].x);
 
         // get month name from date
-        var date = dataSeries["Sun"][i].x;
-        var month = date.split("/")[1];
-        var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        let date = dataSeries["Sun"][i].x;
+        let month = date.split("/")[1];
+        let monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
         month = monthNames[month - 1];
         x_categories[i] = month;
     }
 
 
     // loop through x_categories and replace the duplicate values with empty string, while preserving the order and length of the array
-    for (var i = 0; i < x_categories.length; i++) {
-        for (var j = i + 1; j < x_categories.length; j++) {
+    for (let i = 0; i < x_categories.length; i++) {
+        for (let j = i + 1; j < x_categories.length; j++) {
             if (x_categories[i] == x_categories[j]) {
                 x_categories[j] = "";
             }

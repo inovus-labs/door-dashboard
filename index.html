@@ -14,26 +14,66 @@
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
 
-    <div class="container">
+    <div class="container-fluid main-container">
 
-        <div class="my-5 pt-5 text-center">
+        <div class="text-center">
             <h2>Smart Door Dashboard</h2>
             <p>An experimental information dashboard for a custom built Smart Door at Inovus Labs</p>
         </div>
 
-    </div>
-      
-    <div style="margin: 0px 3rem;">
-        <div id="chart"></div>
+        <div class="row">
+
+            <div class="col">
+                <div class="shadow-sm rounded border">
+                    <div class="p-3">
+
+                        <h5>Recent Activity</h5>
+
+                        <div class="activity">
+                            <div class="d-flex flex-column gap-2">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="shadow-sm rounded border">
+                    <div class="p-3">
+
+                        <h5>Recent Activity</h5>
+
+                        <div class="activity">
+                            <div id="activity-items-holder" class="d-flex flex-column gap-2">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="justify-content-end">
+            <div id="chart"></div>
+        </div>
+
+        <div></div>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://MomentJS.com/downloads/moment.js"></script>
+    
     <script src="heatmap.js"></script>
+    <script src="script.js"></script>
 
 </body>
 

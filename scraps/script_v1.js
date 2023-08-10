@@ -2,11 +2,11 @@
 
 
 function generateData(count, yrange) {
-    var i = 0;
-    var series = [];
+    let i = 0;
+    let series = [];
     while (i < count) {
-        var x = (i + 1).toString();
-        var y =
+        let x = (i + 1).toString();
+        let y =
             Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
 
         series.push({
@@ -21,7 +21,7 @@ function generateData(count, yrange) {
     return series;
 }
 
-var options = {
+let options = {
     chart: {
         height: 250,
         type: "heatmap"
@@ -97,6 +97,6 @@ var options = {
     }
 };
 
-var chart = new ApexCharts(document.querySelector("#chart"), options);
+let chart = new ApexCharts(document.querySelector("#chart"), options);
 
 chart.render();

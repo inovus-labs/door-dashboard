@@ -1,6 +1,6 @@
 
 
-var firebaseData = {}, last365Days = [];
+let firebaseData = {}, last365Days = [];
 
 (async () => {
     let response = await fetch("https://inovus-smart-door-default-rtdb.asia-southeast1.firebasedatabase.app/logs.json")
@@ -80,20 +80,20 @@ firebaseData = {
 
 
 
-var last365Days = [];
+let last365Days = [];
 
-for (var i = 365; i >= 0; i--) {
+for (let i = 365; i >= 0; i--) {
 
-    var date = new Date();
-    var d = new Date(date.getTime() - (i * 24 * 60 * 60 * 1000));
+    let date = new Date();
+    let d = new Date(date.getTime() - (i * 24 * 60 * 60 * 1000));
 
-    var dayOfWeek = d.getDay();
-    var weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    let dayOfWeek = d.getDay();
+    let weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     dayOfWeek = weekDays[dayOfWeek];
 
-    var day = d.getDate();
-    var month = d.getMonth() + 1;
-    var year = d.getFullYear();
+    let day = d.getDate();
+    let month = d.getMonth() + 1;
+    let year = d.getFullYear();
 
     // handle remaining days of last week
     let specialDay;
@@ -102,12 +102,12 @@ for (var i = 365; i >= 0; i--) {
         // console.log(specialDay);
     }
 
-    var value = 0;
+    let value = 0;
 
-    for (var key in firebaseData) {
+    for (let key in firebaseData) {
         if (firebaseData.hasOwnProperty(key)) {
-            var obj = firebaseData[key];
-            var date = obj.date;
+            let obj = firebaseData[key];
+            let date = obj.date;
 
             if (date.dd == day && date.mm == month && date.yyyy == year) {
                 value++;
@@ -128,21 +128,21 @@ for (var i = 365; i >= 0; i--) {
 
     // add the remaining days of last week
     if (i == 365) {
-        for (var j = 0; j < specialDay; j++) {
-            var dayOfWeek = j;
-            var weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        for (let j = 0; j < specialDay; j++) {
+            let dayOfWeek = j;
+            let weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
             dayOfWeek = weekDays[dayOfWeek];
 
-            var day = d.getDate() - (specialDay - j);
-            var month = d.getMonth() + 1;
-            var year = d.getFullYear();
+            let day = d.getDate() - (specialDay - j);
+            let month = d.getMonth() + 1;
+            let year = d.getFullYear();
 
-            var value = 0;
+            let value = 0;
 
-            for (var key in firebaseData) {
+            for (let key in firebaseData) {
                 if (firebaseData.hasOwnProperty(key)) {
-                    var obj = firebaseData[key];
-                    var date = obj.date;
+                    let obj = firebaseData[key];
+                    let date = obj.date;
 
                     if (date.dd == day && date.mm == month && date.yyyy == year) {
                         value++;
@@ -178,8 +178,8 @@ let dataSeries = {
     "Sat": [],
 }
 
-for (var i = 0; i < last365Days.length; i++) {
-    var day = last365Days[i].date.day;
+for (let i = 0; i < last365Days.length; i++) {
+    let day = last365Days[i].date.day;
     dataSeries[day].push({
         x: last365Days[i].date.dd + "/" + last365Days[i].date.mm + "/" + last365Days[i].date.yyyy,
         y: last365Days[i].value
@@ -189,21 +189,21 @@ for (var i = 0; i < last365Days.length; i++) {
 // define categories for x-axis
 // length of categories should be equal to the length of dataSeries
 let x_categories = [];
-for (var i = 0; i < dataSeries["Sun"].length; i++) {
+for (let i = 0; i < dataSeries["Sun"].length; i++) {
     x_categories.push(dataSeries["Sun"][i].x);
     
     // get month name from date
-    var date = dataSeries["Sun"][i].x;
-    var month = date.split("/")[1];
-    var monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    let date = dataSeries["Sun"][i].x;
+    let month = date.split("/")[1];
+    let monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
     month = monthNames[month - 1];
     x_categories[i] = month;
 
 }
 
 // loop through x_categories and replace the duplicate values with empty string, while preserving the order and length of the array
-for (var i = 0; i < x_categories.length; i++) {
-    for (var j = i + 1; j < x_categories.length; j++) {
+for (let i = 0; i < x_categories.length; i++) {
+    for (let j = i + 1; j < x_categories.length; j++) {
         if (x_categories[i] == x_categories[j]) {
             x_categories[j] = "";
         }
@@ -219,7 +219,7 @@ console.log(dataSeries);
 
 
 
-var options = {
+let options = {
     chart: {
         height: 250,
         type: "heatmap",
@@ -298,23 +298,23 @@ var options = {
     tooltip: {
         // custom message for tooltip "3 activity on Saturday, August 05, 2023"
         custom: function ({ series, seriesIndex, dataPointIndex, w }) {
-            var date = w.globals.seriesX[seriesIndex][dataPointIndex];
+            let date = w.globals.seriesX[seriesIndex][dataPointIndex];
             
-            var dd = date.split("/")[0];
-            var mm = date.split("/")[1];
-            var yyyy = date.split("/")[2];
+            let dd = date.split("/")[0];
+            let mm = date.split("/")[1];
+            let yyyy = date.split("/")[2];
             
             // getDay()
-            var d = new Date(yyyy, mm - 1, dd);
-            var dayOfWeek = d.getDay();
+            let d = new Date(yyyy, mm - 1, dd);
+            let dayOfWeek = d.getDay();
             
-            var monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
-            var weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+            let monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+            let weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
             month = monthNames[month - 1];
             
 
-            var activity = w.globals.series[seriesIndex][dataPointIndex];
-            // var dayOfWeek = w.globals.series[seriesIndex][dataPointIndex + 1];
+            let activity = w.globals.series[seriesIndex][dataPointIndex];
+            // let dayOfWeek = w.globals.series[seriesIndex][dataPointIndex + 1];
 
             return (
                 "<div class='arrow_box'>" +
@@ -330,5 +330,5 @@ var options = {
 };
 
 
-var chart = new ApexCharts(document.querySelector("#chart"), options);
+let chart = new ApexCharts(document.querySelector("#chart"), options);
 chart.render();

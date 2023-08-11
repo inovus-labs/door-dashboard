@@ -128,7 +128,7 @@ function generateDOM(data) {
     // <p class="statement">...</p>
     let statement = document.createElement("p");
     statement.classList.add("statement");
-    statement.innerHTML = `<span>${data.owner}</span> has <span>${data.status}</span> the door <span>${data.relativeTime}</span> at <span>${data.time}</span>`;
+    statement.innerHTML = `<span>${data.owner}</span> has <span>${data.status}</span> the door <span>${data.relativeTime}</span>.`;
 
     // <div class="sub-statement">...</div>
     let subStatement = document.createElement("div");

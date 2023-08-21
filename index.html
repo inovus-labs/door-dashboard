@@ -27,23 +27,36 @@
 
         <div class="row">
 
-            <div class="col">
+            <div class="col-3">
                 <div class="shadow-sm rounded border">
                     <div class="p-3">
 
-                        <h5>Recent Activity</h5>
+                        <h5>Overview</h5>
 
-                        <div class="activity">
-                            <div class="d-flex flex-column gap-2">
+                        <div class="overview">
 
+                            <div class="border rounded px-3 py-1">                                    
+                                <span class="status-label">Status</span>
+                                <p id="door-status">Door Locked</p>
                             </div>
+                            
+                            <div class="border rounded px-3 py-1">                                    
+                                <span class="duration-label">No: of door opens, today</span>
+                                <p id="time-duration-week">12 times</p>
+                            </div>
+                            
+                            <div class="border rounded px-3 py-1">                                    
+                                <span class="duration-label">Time remained open, today</span>
+                                <p id="time-duration">2 hours 32 mins</p>
+                            </div>
+
                         </div>
 
                     </div>
                 </div>
             </div>
 
-            <div class="col">
+            <div class="col-6">
                 <div class="shadow-sm rounded border">
                     <div class="p-3">
 
@@ -59,6 +72,50 @@
                 </div>
             </div>
 
+            <div class="col-3">
+                <div class="shadow-sm rounded border">
+                    <div class="p-3">
+
+                        <h5>Project Details</h5>
+
+                        <div class="details">
+
+                            <div class="border rounded px-3 py-2 contributors">
+                                <span>Contributors</span>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p>Nikhil T Das</p>
+                                    <span>(Hardware & IoT)</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p>Arjun Krishna</p>
+                                    <span>(Software & IoT)</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p>Badhusha Shaji</p>
+                                    <span>(Support)</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p>Abhishek V Gopal</p>
+                                    <span>(Support)</span>
+                                </div>
+                            </div>
+
+                            <div class="border rounded px-3 py-2">
+
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <p><a href="">GitHub Repo</a></p>
+                                    <p><a href="">Project Story</a></p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
         </div>
 
         <div class="justify-content-end">
@@ -73,7 +130,7 @@
     <script src="https://MomentJS.com/downloads/moment.js"></script>
     
     <script src="heatmap.js"></script>
-    <script src="script.js"></script>
+    <script src="activity.js"></script>
 
 </body>
 

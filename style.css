@@ -16,6 +16,58 @@
     justify-content: space-between;
 }
 
+
+.overview, .details {
+    height: 175px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.overview p {
+    margin: 0;
+    color: #5a5a5a;
+    font-size: 15px;
+}
+
+.overview span {
+    color: #90A4AE;
+    font-size: 11px;
+}
+
+.details {
+    font-weight: 500;
+}
+
+.details p {
+    margin: 0;
+    color: #5a5a5a;
+}
+
+.details span {
+    margin: 0;
+    font-size: 11px;
+    color: #90A4AE;
+}
+
+.contributors p {
+    margin: 0;
+}
+
+ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+
+
+
+
+
+
 .activity {
     height: 175px;
     padding: 0px 10px 4px 0px;

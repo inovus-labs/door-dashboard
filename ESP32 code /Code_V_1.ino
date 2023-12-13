@@ -1,3 +1,17 @@
+//-----------------------------------------------------------------------------
+
+//The below mentioned are the pin connectors of rfid and esp32  
+
+//RST - 5
+//MISO - 19
+//mosi - 23
+//skc - 18
+//sda - 21
+
+// other pins are mentioned below 
+
+//-------------------------------------------------------------------------------
+
 #include <WiFi.h>
 #include <HTTPClient.h>
 
@@ -6,13 +20,13 @@
 
 #define RST_PIN   5
 #define SS_PIN    21
-#define lock    27
-#define led1    12
-#define led2    13
-#define ledin1    25
-#define ledin2    33
-#define led3    14
-#define switch  26
+#define lock    27   //relay
+#define led1    12   //yellow
+#define led2    13   //green
+#define ledin1    25 // yellow
+#define ledin2    33 //green
+#define led3    14   // red
+#define switch  26   //manetic
 
 MFRC522 mfrc522(SS_PIN, RST_PIN);
 
